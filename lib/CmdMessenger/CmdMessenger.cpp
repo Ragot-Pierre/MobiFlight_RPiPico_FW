@@ -47,7 +47,7 @@ extern "C"
 #include <stdarg.h>
 }
 #include <stdio.h>
-#include <CmdMessenger.h>
+#include <CmdMessenger.hpp>
 
 // **** Initialization ****
 

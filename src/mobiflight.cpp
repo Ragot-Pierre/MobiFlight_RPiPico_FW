@@ -4,10 +4,10 @@
 
 #include <Arduino.h>
 
-#include <CmdMessenger.h>
-#include <HomePitBus.h>
+#include <CmdMessenger.hpp>
+#include <HomePitBus.hpp>
 
-#include "mobiflight.h"
+#include "mobiflight.hpp"
 
 // Other defines.
 static constexpr unsigned long POWER_SAVING_TIME_SECS = 60 * 60; // One hour (60 minutes * 60 seconds).
@@ -164,80 +164,6 @@ void OnGetInfo()
 void OnGetConfig()
 {
   Serial.println(configString);
-    // "10,
-    // 1.0.L1:
-    // 1.1.L2:
-    // 1.2.L3:
-    // 1.3.L4:
-    // 1.4.L5:
-    // 1.5.L6:
-    // 1.6.MSG:
-    // 1.7.DIR:
-    // 1.8.IDX:
-    // 1.9.TUN:
-    // 1.10.A:
-    // 1.11.H:
-    // 1.12.O:
-    // 1.13.V:
-    // 1.14.FPLN:
-    // 1.15.B:
-    // 1.16.I:
-    // 1.17.P:
-    // 1.18.W:
-    // 1.19.LEGS:
-    // 1.20.C:
-    // 1.21.J:
-    // 1.22.Q:
-    // 1.23.X:
-    // 1.24.DEP_ARR:
-    // 1.25.D:
-    // 1.26.K:
-    // 1.27.R:
-    // 1.28.Y:
-    // 1.29.PERF:
-    // 1.30.E:
-    // 1.31.L:
-    // 1.32.S:
-    // 1.33.Z:
-    // 1.34.DSPL_MENU:
-    // 1.35.F:
-    // 1.36.M:
-    // 1.37.T:
-    // 1.38.SP:
-    // 1.39.MFD_ADV:
-    // 1.40.G:
-    // 1.41.N:
-    // 1.42.U:
-    // 1.43.DIV:
-    // 1.44.MFD_DATA:
-    // 1.45.1:
-    // 1.46.4:
-    // 1.47.7:
-    // 1.48.DOT:
-    // 1.49.PREV:
-    // 1.50.2:
-    // 1.51.5:
-    // 1.52.8:
-    // 1.53.0:
-    // 1.54.3:
-    // 1.55.6:
-    // 1.56.9:
-    // 1.57.PLUSMINUS:
-    // 1.58.R1:
-    // 1.59.R2:
-    // 1.60.R3:
-    // 1.61.R4:
-    // 1.62.R5:
-    // 1.63.R6:
-    // 1.64.EXEC:
-    // 1.65.NEXT:
-    // 1.66.CLR:
-    // 1.67.BRT:
-    // 1.68.DIM:
-    // 1.69.DEL:
-    // 3.70.Brightness:
-    // ;"
-    // ));
 }
 
 /**
@@ -313,8 +239,7 @@ void setup()
   /* USB Serial connection - Baudrate doesn't matter here */
   Serial.begin(115200);
 
-  // Serial1.begin(921600);
-  Serial1.begin(460800);
+  auxBus.Init(460800);
 
   attachCommandCallbacks();
   cmdMessenger.printLfCr();
@@ -330,8 +255,7 @@ void setup()
  */
 void setup1()
 {
-  // Serial2.begin(921600);
-  Serial2.begin(460800);
+  // mainBus.Init(460800);
 }
 
 /**
@@ -340,11 +264,17 @@ void setup1()
  */
 void loop()
 {
-  // while (rp2040.fifo.available())
-  // {
-  //   /* code */
-  // }
+  while (rp2040.fifo.available())
+  {
+    uint32_t tmpData = rp2040.fifo.pop();
+    
+    uint8_t cmd = (tmpData >> 24) & 0xFF;
+    uint8_t addr = (tmpData >> 16) & 0xFF;
+    uint8_t data = (tmpData >> 8) & 0xFF;
+    uint8_t value = tmpData & 0xFF;
+  }
   
+  auxBus.ProcessData();
 
   cmdMessenger.feedinSerialData();
 
@@ -359,6 +289,28 @@ void loop1()
 {
   while (rp2040.fifo.available())
   {
-    /* code */
+    uint32_t tmpData = rp2040.fifo.pop();
+    
+    uint8_t cmd = (tmpData >> 24) & 0xFF;
+    uint8_t addr = (tmpData >> 16) & 0xFF;
+    uint8_t data = (tmpData >> 8) & 0xFF;
+    uint8_t value = tmpData & 0xFF;
+
+    mainBus.Send(cmd, addr, data, value);
+  }
+
+  mainBus.ProcessData();
+
+  while (mainBus.index)
+  {
+    uint8_t addr = mainBus.FIFO[mainBus.index][0];
+    uint8_t data = mainBus.FIFO[mainBus.index][1];
+    uint8_t value = mainBus.FIFO[mainBus.index][2];
+
+    uint32_t tmpData = (static_cast<uint32_t>('U') << 24) | (static_cast<uint32_t>(addr) << 16) | (static_cast<uint32_t>(data) << 8) | static_cast<uint32_t>(value);
+
+    rp2040.fifo.push(tmpData);
+
+    mainBus.index--;
   }
 }
