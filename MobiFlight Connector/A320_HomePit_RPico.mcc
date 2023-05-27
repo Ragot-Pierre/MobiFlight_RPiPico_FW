@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MobiflightConnector>
+  <outputs>
+    <config guid="6f1fd007-b44f-4606-8215-5d6eaec5dc24">
+      <active>true</active>
+      <description>EXT_PWR_ON</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:EXTERNAL POWER AVAILABLE:1, Bool) (A:EXTERNAL POWER ON:1, Bool) and (L:A32NX_OVHD_INTLT_ANN) 0 == or (L:A32NX_ELEC_DC_BAT_BUS_IS_POWERED, Bool) and 1 and (L:A32NX_OVHD_INTLT_ANN, number) 2 == if{ 0.1 } els{ 1 } * (A:CIRCUIT GENERAL PANEL ON, Bool) *" UUID="f85ffab7-0a49-427e-8227-a3a3cdad9a89" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+          <interpolation active="False">
+            <value x="0" y="1" />
+            <value x="1" y="0" />
+          </interpolation>
+        </modifiers>
+        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="MCDU-Debug LED" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="4b3a311a-8929-497c-bcdf-cf2d66b2da42">
+      <active>true</active>
+      <description>AP_SPEED_H</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_SPEED_SELECTED)" UUID="b97bdb2d-11cd-45fd-921a-5bcb3c324530" />
+        <modifiers>
+          <transformation active="True" expression="Truncate($ / 100)" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="-" serial="-" trigger="normal" pin="" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="0d7db2d1-7fe6-4181-9d59-17dcffa05327">
+      <active>true</active>
+      <description>AP_SPEED_T</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_SPEED_SELECTED)" UUID="b97bdb2d-11cd-45fd-921a-5bcb3c324530" />
+        <modifiers>
+          <transformation active="True" expression="Truncate(($ % 100) / 10)" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="-" serial="-" trigger="normal" pin="" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="380561cd-7af6-4975-834e-8b10597dc973">
+      <active>true</active>
+      <description>AP_SPEED_U</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_SPEED_SELECTED)" UUID="b97bdb2d-11cd-45fd-921a-5bcb3c324530" />
+        <modifiers>
+          <transformation active="True" expression="$ % 10" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="-" serial="-" trigger="normal" pin="" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+  </outputs>
+  <inputs>
+    <config guid="a88edf32-93e9-410d-95be-636173c01d8a">
+      <active>true</active>
+      <description>MCDU - L1</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L1" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L1)" presetId="3a96afc2-5adf-4f31-beb5-60b37bf1b971" />
+          <onRelease />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="a88edf32-93e9-410d-95be-636173c01d8b">
+      <active>true</active>
+      <description>MCDU - L2</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L2" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L2)" presetId="cd3c6182-69c4-47cf-bc5f-2815fce1ced0" />
+          <onRelease />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="a88edf32-93e9-410d-95be-636173c01d8c">
+      <active>true</active>
+      <description>MCDU - L3</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L3" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L3)" presetId="3e176fa1-f47a-4287-8434-375aaefa444b" />
+          <onRelease />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="a88edf32-93e9-410d-95be-636173c01d8d">
+      <active>true</active>
+      <description>MCDU - L4</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L4" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L4)" presetId="76733f5d-77ba-41c1-b637-de5031673195" />
+          <onRelease />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="a88edf32-93e9-410d-95be-636173c01d8e">
+      <active>true</active>
+      <description>MCDU - L5</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L5" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L5)" presetId="afcf9e88-b54a-4164-88a1-dbf11ce3ae34" />
+          <onRelease />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="a88edf32-93e9-410d-95be-636173c01d8f">
+      <active>true</active>
+      <description>MCDU - L6</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L6" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L6)" presetId="2307811d-ddc8-4692-9935-f3a6619d9045" />
+          <onRelease />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+  </inputs>
+</MobiflightConnector>

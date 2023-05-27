@@ -1,0 +1,482 @@
+{
+  "$schema": "./mfboard.schema.json",
+  "Connection": {
+    "ConnectionDelay": 1750,
+    "DelayAfterFirmwareUpdate": 0,
+    "DtrEnable": true,
+    "EEPROMSize": 256,
+    "ExtraConnectionRetry": true,
+    "ForceResetOnFirmwareUpdate": false,
+    "MessageSize": 32
+  },
+  "HardwareIds": [ "^VID_2E8A&PID_000A" ],
+  "Info": {
+    "CanInstallFirmware": false,
+    "FriendlyName": "MCDU",
+    "LatestFirmwareVersion": "3.0.0",
+    "MobiFlightType": "A320 HomePit"
+  },
+  "ModuleLimits": {
+    "MaxAnalogInputs": 69,
+    "MaxButtons": 320,
+    "MaxEncoders": 0,
+    "MaxLcdI2C": 0,
+    "MaxLedSegments": 0,
+    "MaxOutputs": 420,
+    "MaxServos": 0,
+    "MaxSteppers": 0
+  },
+  "Pins": [
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "isPWM": true,
+      "Name": "MCDU-DEBUG_LED",
+      "Pin": 0
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-L1",
+      "Pin": 1
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-L2",
+      "Pin": 2
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-L3",
+      "Pin": 3
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-L4",
+      "Pin": 4
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-L5",
+      "Pin": 5
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-L6",
+      "Pin": 6
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-R1",
+      "Pin": 7
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-R2",
+      "Pin": 8
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-R3",
+      "Pin": 9
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-R4",
+      "Pin": 10
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-R5",
+      "Pin": 11
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-R6",
+      "Pin": 12
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-DIR",
+      "Pin": 13
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-PROG",
+      "Pin": 14
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-PERF",
+      "Pin": 15
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-INIT",
+      "Pin": 16
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-DATA",
+      "Pin": 17
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-VIDE_1",
+      "Pin": 18
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-F-PLN",
+      "Pin": 19
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-RAD NAV",
+      "Pin": 20
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-FUEL PRED",
+      "Pin": 21
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-SEC F-PLN",
+      "Pin": 22
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-ATC COMM",
+      "Pin": 23
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-MCDU MENU",
+      "Pin": 24
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-AIRPORT",
+      "Pin": 25
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-VIDE_2",
+      "Pin": 26
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-LEFT",
+      "Pin": 27
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-UP",
+      "Pin": 28
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-RIGHT",
+      "Pin": 29
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-DOWN",
+      "Pin": 30
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-1",
+      "Pin": 31
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-2",
+      "Pin": 32
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-3",
+      "Pin": 33
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-4",
+      "Pin": 34
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-5",
+      "Pin": 35
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-6",
+      "Pin": 36
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-7",
+      "Pin": 37
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-8",
+      "Pin": 38
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-9",
+      "Pin": 39
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-COMMA",
+      "Pin": 40
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-0",
+      "Pin": 41
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-+/-",
+      "Pin": 42
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-A",
+      "Pin": 43
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-B",
+      "Pin": 44
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-C",
+      "Pin": 45
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-D",
+      "Pin": 46
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-E",
+      "Pin": 47
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-F",
+      "Pin": 48
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-G",
+      "Pin": 49
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-H",
+      "Pin": 50
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-I",
+      "Pin": 51
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-J",
+      "Pin": 52
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-K",
+      "Pin": 53
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-L",
+      "Pin": 54
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-MCDU MENU",
+      "Pin": 55
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-N",
+      "Pin": 56
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-O",
+      "Pin": 57
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-P",
+      "Pin": 58
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-Q",
+      "Pin": 59
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-R",
+      "Pin": 60
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-S",
+      "Pin": 61
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-T",
+      "Pin": 62
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-U",
+      "Pin": 63
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-V",
+      "Pin": 64
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-W",
+      "Pin": 65
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-X",
+      "Pin": 66
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-Y",
+      "Pin": 67
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-Z",
+      "Pin": 68
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-/",
+      "Pin": 69
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-SP",
+      "Pin": 70
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-OVFY",
+      "Pin": 71
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-CLR",
+      "Pin": 72
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-BRT",
+      "Pin": 73
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-DIM",
+      "Pin": 74
+    }
+  ]
+}
