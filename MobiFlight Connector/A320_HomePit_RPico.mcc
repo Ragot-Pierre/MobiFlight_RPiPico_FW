@@ -28,7 +28,7 @@
           <transformation active="True" expression="Truncate($ / 100)" substrStart="0" substrEnd="7" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         </modifiers>
-        <display type="-" serial="-" trigger="normal" pin="" pinBrightness="255" />
+        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="FCU-SPD 1" pinBrightness="255" pinPwm="True" />
         <preconditions />
         <configrefs />
       </settings>
@@ -42,7 +42,7 @@
           <transformation active="True" expression="Truncate(($ % 100) / 10)" substrStart="0" substrEnd="7" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         </modifiers>
-        <display type="-" serial="-" trigger="normal" pin="" pinBrightness="255" />
+        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="FCU-SPD 2" pinBrightness="255" pinPwm="True" />
         <preconditions />
         <configrefs />
       </settings>
@@ -56,7 +56,7 @@
           <transformation active="True" expression="$ % 10" substrStart="0" substrEnd="7" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         </modifiers>
-        <display type="-" serial="-" trigger="normal" pin="" pinBrightness="255" />
+        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="FCU-SPD 3" pinBrightness="255" pinPwm="True" />
         <preconditions />
         <configrefs />
       </settings>
@@ -131,6 +131,14 @@
           <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L6)" presetId="2307811d-ddc8-4692-9935-f3a6619d9045" />
           <onRelease />
         </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="01c4e280-f5ea-4874-914f-8c80978e8705">
+      <active>true</active>
+      <description>CAPT EFIS - ADF/VOR 1</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="" name="" type="-" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <preconditions />
         <configrefs />
       </settings>

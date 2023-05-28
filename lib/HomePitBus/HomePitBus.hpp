@@ -11,7 +11,7 @@ private:
 public:
     HomePitBus(SerialUART &comms);
 
-    void Init(uint32_t baudrate = 460800);
+    void Init(uint baudrate = 460800);
     void Send(uint8_t cmd, uint8_t addr, uint8_t data, uint8_t value);
     void ProcessData();
 

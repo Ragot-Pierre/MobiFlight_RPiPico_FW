@@ -22,6 +22,87 @@ CmdMessenger cmdMessenger = CmdMessenger(Serial);
 HomePitBus auxBus = HomePitBus(Serial1);
 HomePitBus mainBus = HomePitBus(Serial2);
 
+
+
+/**
+ * @brief Check if value is present in list
+ * @param value value to find
+ * @param list list to search in
+ * @return bool
+*/
+bool InList(const uint value, const uint *list)
+{
+  for (size_t i = 0; i < sizeof(list); i++) {
+    if (list[i] == value) { return true; }
+  }
+  return false;
+}
+
+/**
+ * @brief Translate the (addr, data) tuple to a uint pin number
+ * @param addr address of the remote device
+ * @param data remote "pin" number for this device
+ * @return uint pin number as defined in the MobiFlight board definition
+*/
+uint TranslateFromTuple(uint8_t addr, uint8_t data)
+{
+  uint keyId = 0;
+
+  switch (addr)
+  {
+  case MCDU_ADDR:
+    keyId = data + MCDU_START;
+    break;
+    
+  case FCU_ADDR:
+    keyId = data + FCU_START;
+    break;
+    
+  case CAPT_EFIS_ADDR:
+    keyId = data + CAPT_EFIS_START;
+    break;
+    
+  case FO_EFIS_ADDR:
+    keyId = data + FO_EFIS_START;
+    break;
+  
+  default:
+    break;
+  }
+
+  return keyId;
+}
+
+/**
+ * @brief Translate the uint pin number format to a (addr, data) tuple
+ * @param keyId uint pin number to translate from
+ * @param addr address of the remote device
+ * @param data remote "pin" number for this device
+*/
+void TranslateToTuple(uint keyId, uint8_t& addr, uint8_t& data)
+{
+  if (keyId <= MCDU_RANGE)
+  {
+    addr = MCDU_ADDR;
+    data = keyId - MCDU_START;
+  }
+  else if (keyId <= FCU_RANGE)
+  {
+    addr = FCU_ADDR;
+    data = keyId - FCU_START;
+  }
+  else if (keyId <= CAPT_EFIS_RANGE)
+  {
+    addr = CAPT_EFIS_ADDR;
+    data = keyId - CAPT_EFIS_START;
+  }
+  else if (keyId <= FO_EFIS_RANGE)
+  {
+    addr = FO_EFIS_ADDR;
+    data = keyId - FO_EFIS_START;
+  }
+}
+
 /**
  * @brief Registers callbacks for all supported MobiFlight commands.
  *
@@ -39,7 +120,7 @@ void attachCommandCallbacks()
   cmdMessenger.attach(MFMessage::kActivateConfig, OnActivateConfig);
   cmdMessenger.attach(MFMessage::kSetName, OnSetName);
   cmdMessenger.attach(MFMessage::kGenNewSerial, OnGenNewSerial);
-  cmdMessenger.attach(MFMessage::kTrigger, SendOk);
+  cmdMessenger.attach(MFMessage::kTrigger, OnTrigger);
   cmdMessenger.attach(MFMessage::kResetBoard, OnResetBoard);
 }
 
@@ -83,43 +164,24 @@ void OnResetBoard()
 }
 
 /**
- * @brief Callback for handling an button type input from the cockpit.
+ * @brief Callback for handling an input from the cockpit.
  *
- * @param keyId The ID of the key that triggered the event
- * @param state State of the button (pressed or released)
- */
-void SendButtonEvent(const int keyId, const bool state)
-{
-  lastButtonPress = millis();
-
-  // if (keyId > ButtonNames::ButtonCount)
-  // {
-  //   cmdMessenger.sendCmd(MFMessage::kStatus, F("Keypress isn't valid"));
-  //   return;
-  // }
-
-  // Send the button name and state to MobiFlight.
-  cmdMessenger.sendCmdStart(MFMessage::kButtonChange);
-  cmdMessenger.sendCmdArg(keyId);
-  cmdMessenger.sendCmdArg(state);
-  cmdMessenger.sendCmdEnd();
-}
-
-/**
- * @brief Callback for handling an analogue type input from the cockpit.
- *
+ * @param message The MFMessage type to announce if input is digital or analog
  * @param keyId The ID of the key that triggered the event
  * @param value State of the button (pressed or released)
  */
-void SendAnalogEvent(const int keyId, const int value)
+void SendEvent(const uint keyId, const uint value)
 {
-  lastButtonPress = millis();
+  MFMessage message = MFMessage::kButtonChange;
 
-  // Send the button name and state to MobiFlight.
-  cmdMessenger.sendCmdStart(MFMessage::kAnalogChange);
+  if (InList(keyId, analogPins)) { message = MFMessage::kAnalogChange; }
+
+  cmdMessenger.sendCmdStart(message);
   cmdMessenger.sendCmdArg(keyId);
   cmdMessenger.sendCmdArg(value);
   cmdMessenger.sendCmdEnd();
+
+  lastButtonPress = millis();
 }
 
 /**
@@ -173,14 +235,39 @@ void OnGetConfig()
 void OnSetPin()
 {
   // Read led state argument, interpret string as boolean
-  int pin = cmdMessenger.readInt16Arg();
-  int state = cmdMessenger.readInt16Arg();
+  uint pin = cmdMessenger.readInt16Arg();
+  uint value = cmdMessenger.readInt16Arg();
 
-  if (pin == 0)
-  {
-    cmdMessenger.sendCmd(kStatus, "OK");
-    analogWrite(LED_BUILTIN, state);
-  }
+  cmdMessenger.sendCmd(kStatus, "OK");
+  
+  uint8_t addr = 0;
+  uint8_t data = 0;
+
+  TranslateToTuple(pin, addr, data);
+
+  uint tmpData = (static_cast<uint>('W') << 24) | (static_cast<uint>(addr) << 16) | (static_cast<uint>(data) << 8) | static_cast<uint>(value);
+
+  rp2040.fifo.push(tmpData);
+}
+
+/**
+ * @brief Callback for MobiFlight trigger command.
+ * Assumed to be used for fetching input states.
+ */
+void OnTrigger()
+{
+  uint pin = cmdMessenger.readInt16Arg();
+
+  cmdMessenger.sendCmd(kStatus, "OK");
+  
+  uint8_t addr = 0;
+  uint8_t data = 0;
+
+  TranslateToTuple(pin, addr, data);
+
+  uint tmpData = (static_cast<uint>('R') << 24) | (static_cast<uint>(addr) << 16) | (static_cast<uint>(data) << 8) | static_cast<uint>(0x00);
+
+  rp2040.fifo.push(tmpData);
 }
 
 /**
@@ -255,7 +342,7 @@ void setup()
  */
 void setup1()
 {
-  // mainBus.Init(460800);
+  mainBus.Init(460800);
 }
 
 /**
@@ -264,17 +351,32 @@ void setup1()
  */
 void loop()
 {
+  uint keyId = 0;
+
   while (rp2040.fifo.available())
   {
-    uint32_t tmpData = rp2040.fifo.pop();
+    uint tmpData = rp2040.fifo.pop();
     
     uint8_t cmd = (tmpData >> 24) & 0xFF;
     uint8_t addr = (tmpData >> 16) & 0xFF;
     uint8_t data = (tmpData >> 8) & 0xFF;
     uint8_t value = tmpData & 0xFF;
+
+    SendEvent(TranslateFromTuple(addr, data), value);
   }
   
   auxBus.ProcessData();
+
+  for (uint8_t i = 0; i < auxBus.index; i++)
+  {
+    uint8_t addr = auxBus.FIFO[i][0];
+    uint8_t data = auxBus.FIFO[i][1];
+    uint8_t value = auxBus.FIFO[i][2];
+    
+    SendEvent(TranslateFromTuple(addr, data), value);
+  }
+
+  auxBus.index = 0;
 
   cmdMessenger.feedinSerialData();
 
@@ -289,7 +391,7 @@ void loop1()
 {
   while (rp2040.fifo.available())
   {
-    uint32_t tmpData = rp2040.fifo.pop();
+    uint tmpData = rp2040.fifo.pop();
     
     uint8_t cmd = (tmpData >> 24) & 0xFF;
     uint8_t addr = (tmpData >> 16) & 0xFF;
@@ -297,20 +399,31 @@ void loop1()
     uint8_t value = tmpData & 0xFF;
 
     mainBus.Send(cmd, addr, data, value);
+
+    if (!addr & !data)
+    {
+      analogWrite(LED_BUILTIN, value);
+    }    
   }
 
   mainBus.ProcessData();
 
-  while (mainBus.index)
+  for (uint8_t i = 0; i < mainBus.index; i++)
   {
-    uint8_t addr = mainBus.FIFO[mainBus.index][0];
-    uint8_t data = mainBus.FIFO[mainBus.index][1];
-    uint8_t value = mainBus.FIFO[mainBus.index][2];
+    // uint8_t cmd = MFMessage::kButtonChange;
+    uint8_t addr = mainBus.FIFO[i][0];
+    uint8_t data = mainBus.FIFO[i][1];
+    uint8_t value = mainBus.FIFO[i][2];
 
-    uint32_t tmpData = (static_cast<uint32_t>('U') << 24) | (static_cast<uint32_t>(addr) << 16) | (static_cast<uint32_t>(data) << 8) | static_cast<uint32_t>(value);
+    // if (InList((uint)data, analogPins))
+    // {
+    //   cmd = MFMessage::kAnalogChange;
+    // }
+
+    uint tmpData = /*(static_cast<uint>(cmd) << 24) |*/ (static_cast<uint>(addr) << 16) | (static_cast<uint>(data) << 8) | static_cast<uint>(value);
 
     rp2040.fifo.push(tmpData);
-
-    mainBus.index--;
   }
+
+  mainBus.index = 0;
 }

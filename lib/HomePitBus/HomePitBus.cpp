@@ -5,7 +5,7 @@ HomePitBus::HomePitBus(SerialUART &comms)
     serialPort = &comms;
 }
 
-void HomePitBus::Init(uint32_t baudrate)
+void HomePitBus::Init(uint baudrate)
 {
     serialPort->begin(baudrate);
 }

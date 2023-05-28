@@ -477,6 +477,898 @@
       "isI2C": false,
       "Name": "MCDU-DIM",
       "Pin": 74
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "MCDU-BACKLIGHT",
+      "isPWM": true,
+      "Pin": 75
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-B A/THR",
+      "Pin": 76
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-L A/THR",
+      "Pin": 77
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-B AP 1",
+      "Pin": 78
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-L AP 1",
+      "Pin": 79
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-B AP 2",
+      "Pin": 80
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-L AP 2",
+      "Pin": 81
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-HTVS",
+      "Pin": 82
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-SPD/MACH",
+      "Pin": 83
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-METRIC ALT",
+      "Pin": 84
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-B LOC",
+      "Pin": 85
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-L LOC",
+      "Pin": 86
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-B EXPED",
+      "Pin": 87
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-L EXPED",
+      "Pin": 88
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-B APPR",
+      "Pin": 89
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-L APPR",
+      "Pin": 90
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-SPD+",
+      "Pin": 91
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-SPD-",
+      "Pin": 92
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-SPD PULL",
+      "Pin": 93
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-SPD PUSH",
+      "Pin": 94
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-HDG+",
+      "Pin": 95
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-HDG-",
+      "Pin": 96
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-HDG PULL",
+      "Pin": 97
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-HDG PUSH",
+      "Pin": 98
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-VS+",
+      "Pin": 99
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-VS-",
+      "Pin": 100
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-VS PULL",
+      "Pin": 101
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-VS PUSH",
+      "Pin": 102
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT+",
+      "Pin": 103
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT-",
+      "Pin": 104
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT PULL",
+      "Pin": 105
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT PUSH",
+      "Pin": 106
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT 100",
+      "Pin": 107
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT 1000",
+      "Pin": 108
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-SPD 1",
+      "isPWM": true,
+      "Pin": 109
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-SPD 2",
+      "isPWM": true,
+      "Pin": 110
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-SPD 3",
+      "isPWM": true,
+      "Pin": 111
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-SPD DOT",
+      "Pin": 112
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-HDG 1",
+      "isPWM": true,
+      "Pin": 113
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-HDG 2",
+      "isPWM": true,
+      "Pin": 114
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-HDG 3",
+      "isPWM": true,
+      "Pin": 115
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-HDG DOT",
+      "Pin": 116
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT 1",
+      "isPWM": true,
+      "Pin": 117
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT 2",
+      "isPWM": true,
+      "Pin": 118
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT 3",
+      "isPWM": true,
+      "Pin": 119
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT 4",
+      "isPWM": true,
+      "Pin": 120
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT 5",
+      "isPWM": true,
+      "Pin": 121
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-ALT DOT",
+      "Pin": 122
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-VS 1",
+      "isPWM": true,
+      "Pin": 123
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-VS 2",
+      "isPWM": true,
+      "Pin": 124
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-VS 3",
+      "isPWM": true,
+      "Pin": 125
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-VS 4",
+      "isPWM": true,
+      "Pin": 126
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-VS 5",
+      "isPWM": true,
+      "Pin": 127
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FCU-BACKLIGHT",
+      "isPWM": true,
+      "Pin": 128
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-B FD",
+      "Pin": 129
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-L FD",
+      "Pin": 130
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-B LS",
+      "Pin": 131
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-L LS",
+      "Pin": 132
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-B CSTR",
+      "Pin": 133
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-L CSTR",
+      "Pin": 134
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-B WPT",
+      "Pin": 135
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-L WPT",
+      "Pin": 136
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-B VOR D",
+      "Pin": 137
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-L VOR D",
+      "Pin": 138
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-B NDB",
+      "Pin": 139
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-L NDB",
+      "Pin": 140
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-B ARPT",
+      "Pin": 141
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-L ARPT",
+      "Pin": 142
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-NA1 ADF",
+      "Pin": 143
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-NA1 OFF",
+      "Pin": 144
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-NA1 VOR",
+      "Pin": 145
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-NA2 ADF",
+      "Pin": 146
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-NA2 OFF",
+      "Pin": 147
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-NA2 VOR",
+      "Pin": 148
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-MLS",
+      "Pin": 149
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-MVOR",
+      "Pin": 150
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-MNAV",
+      "Pin": 151
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-MARC",
+      "Pin": 152
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-MPLAN",
+      "Pin": 153
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-R10",
+      "Pin": 154
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-R20",
+      "Pin": 155
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-R40",
+      "Pin": 156
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-R80",
+      "Pin": 157
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-R160",
+      "Pin": 158
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-R320",
+      "Pin": 159
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO +",
+      "Pin": 160
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO -",
+      "Pin": 161
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO PULL",
+      "Pin": 162
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO PUSH",
+      "Pin": 163
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO HG",
+      "Pin": 164
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO HPA",
+      "Pin": 165
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO QFE",
+      "Pin": 166
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO QNH",
+      "Pin": 167
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO 1",
+      "isPWM": true,
+      "Pin": 168
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO 2",
+      "isPWM": true,
+      "Pin": 169
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO 3",
+      "isPWM": true,
+      "Pin": 170
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO 4",
+      "isPWM": true,
+      "Pin": 171
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BARO DOT",
+      "Pin": 172
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "CT EFIS-BACKLIGHT",
+      "isPWM": true,
+      "Pin": 173
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-B FD",
+      "Pin": 174
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-L FD",
+      "Pin": 175
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-B LS",
+      "Pin": 176
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-L LS",
+      "Pin": 177
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-B CSTR",
+      "Pin": 178
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-L CSTR",
+      "Pin": 179
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-B WPT",
+      "Pin": 180
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-L WPT",
+      "Pin": 181
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-B VOR D",
+      "Pin": 182
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-L VOR D",
+      "Pin": 183
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-B NDB",
+      "Pin": 184
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-L NDB",
+      "Pin": 185
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-B ARPT",
+      "Pin": 186
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-L ARPT",
+      "Pin": 187
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-NA1 ADF",
+      "Pin": 188
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-NA1 OFF",
+      "Pin": 189
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-NA1 VOR",
+      "Pin": 190
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-NA2 ADF",
+      "Pin": 191
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-NA2 OFF",
+      "Pin": 192
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-NA2 VOR",
+      "Pin": 193
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-MLS",
+      "Pin": 194
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-MVOR",
+      "Pin": 195
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-MNAV",
+      "Pin": 196
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-MARC",
+      "Pin": 197
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-MPLAN",
+      "Pin": 198
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-R10",
+      "Pin": 199
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-R20",
+      "Pin": 200
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-R40",
+      "Pin": 201
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-R80",
+      "Pin": 202
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-R160",
+      "Pin": 203
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-R320",
+      "Pin": 204
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO +",
+      "Pin": 205
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO -",
+      "Pin": 206
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO PULL",
+      "Pin": 207
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO PUSH",
+      "Pin": 208
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO HG",
+      "Pin": 209
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO HPA",
+      "Pin": 210
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO QFE",
+      "Pin": 211
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO QNH",
+      "Pin": 212
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO 1",
+      "isPWM": true,
+      "Pin": 213
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO 2",
+      "isPWM": true,
+      "Pin": 214
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO 3",
+      "isPWM": true,
+      "Pin": 215
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO 4",
+      "isPWM": true,
+      "Pin": 216
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BARO DOT",
+      "Pin": 217
+    },
+    {
+      "isAnalog": false,
+      "isI2C": false,
+      "Name": "FO EFIS-BACKLIGHT",
+      "isPWM": true,
+      "Pin": 218
     }
-  ]
+  ] 
 }
