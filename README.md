@@ -5,7 +5,7 @@ Config files and repetitive tasks were sped up using ChatGPT, so errors (wrong n
 They should be fixed with the project going on :)
 
 # How to use
-* It is required to use my custom MobiFlight Connector [https://github.com/Ragot-Pierre/MobiFlight-Connector](here)
+* It is required to use my [custom MobiFlight Connector](https://github.com/Ragot-Pierre/MobiFlight-Connector).
 * For direct use :
 - Create a SymLink of A320_HomePit_RPico.board.json in your _MobiFlight\MobiFlight Connector\Boards_ folder
 - Open the A320_HomePit_RPico.mcc with MobiFlight
