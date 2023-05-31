@@ -7,6 +7,12 @@ HomePitBus::HomePitBus(SerialUART &comms)
 
 void HomePitBus::Init(uint baudrate)
 {
+    if (serialPort == &Serial2)
+    {
+        serialPort->setTX(4);
+        serialPort->setRX(5);
+    }    
+
     serialPort->begin(baudrate);
 }
 

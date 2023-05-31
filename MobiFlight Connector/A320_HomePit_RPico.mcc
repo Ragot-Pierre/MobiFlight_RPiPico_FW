@@ -14,7 +14,7 @@
             <value x="1" y="0" />
           </interpolation>
         </modifiers>
-        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="MCDU-Debug LED" pinBrightness="255" />
+        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="MCDU-Debug LED" pinBrightness="255" pinPwm="True" />
         <preconditions />
         <configrefs />
       </settings>
@@ -57,6 +57,34 @@
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         </modifiers>
         <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="FCU-SPD 3" pinBrightness="255" pinPwm="True" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="d056927e-8a45-454f-98bf-b7b2f004bb79">
+      <active>true</active>
+      <description>MCDU - BACKLIGHT</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:LIGHT POTENTIOMETER:85, Percent)" UUID="e6ad0436-c249-443a-bb47-d24a13342b9d" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="MCDU-BACKLIGHT" pinBrightness="255" pinPwm="True" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="fa363955-4536-4218-bfde-d13a02591005">
+      <active>true</active>
+      <description>FCU - BACKLIGHT</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:LIGHT POTENTIOMETER:85, Percent)" UUID="e6ad0436-c249-443a-bb47-d24a13342b9d" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="FCU-BACKLIGHT" pinBrightness="255" pinPwm="True" />
         <preconditions />
         <configrefs />
       </settings>
