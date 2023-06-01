@@ -12,9 +12,10 @@ They should be fixed with the project going on :)
  Create a SymLink of A320_HomePit_RPico.board.json in your _MobiFlight\MobiFlight Connector\Boards_ folder
  Open the A320_HomePit_RPico.mcc with MobiFlight
  
- ### For developpers :
- Use Visual Studio Code and PlatformIO, the project should open and be already configured
- Wiki : TODO (maybe)
+### For developpers :
+Use Visual Studio Code and PlatformIO, the project should open and be already configured
+
+### Wiki : TODO (maybe)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjY4MjM0MTVdfQ==
+eyJoaXN0b3J5IjpbNTIwMDk5OF19
 -->
