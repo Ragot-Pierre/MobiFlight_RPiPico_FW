@@ -19,8 +19,8 @@ static char unique_serial_str[PICO_UNIQUE_BOARD_ID_SIZE_BYTES * 2 + 1 + 3] = "SN
 
 CmdMessenger cmdMessenger = CmdMessenger(Serial);
 
-HomePitBus auxBus = HomePitBus(Serial1);
-HomePitBus mainBus = HomePitBus(Serial2);
+HomePitBus auxBus = HomePitBus(Serial2);
+HomePitBus mainBus = HomePitBus(Serial1);
 
 
 
@@ -65,6 +65,10 @@ uint TranslateFromTuple(uint8_t addr, uint8_t data)
   case FO_EFIS_ADDR:
     keyId = data + FO_EFIS_START;
     break;
+    
+  case OVH_ADDR:
+    keyId = data + OVH_START;
+    break;
   
   default:
     break;
@@ -100,6 +104,11 @@ void TranslateToTuple(uint keyId, uint8_t& addr, uint8_t& data)
   {
     addr = FO_EFIS_ADDR;
     data = keyId - FO_EFIS_START;
+  }
+  else if (keyId <= OVH_RANGE)
+  {
+    addr = OVH_ADDR;
+    data = keyId - OVH_START;
   }
 }
 

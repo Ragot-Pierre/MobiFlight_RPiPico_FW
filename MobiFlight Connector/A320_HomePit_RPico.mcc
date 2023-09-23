@@ -2,10 +2,11 @@
 <MobiflightConnector>
   <outputs>
     <config guid="6f1fd007-b44f-4606-8215-5d6eaec5dc24">
-      <active>true</active>
+      <active>false</active>
       <description>EXT_PWR_ON</description>
-      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <source type="SimConnect" VarType="CODE" Value="(A:EXTERNAL POWER AVAILABLE:1, Bool) (A:EXTERNAL POWER ON:1, Bool) and (L:A32NX_OVHD_INTLT_ANN) 0 == or (L:A32NX_ELEC_DC_BAT_BUS_IS_POWERED, Bool) and 1 and (L:A32NX_OVHD_INTLT_ANN, number) 2 == if{ 0.1 } els{ 1 } * (A:CIRCUIT GENERAL PANEL ON, Bool) *" UUID="f85ffab7-0a49-427e-8227-a3a3cdad9a89" />
+        <test type="Float" value="1" />
         <modifiers>
           <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
@@ -20,24 +21,26 @@
       </settings>
     </config>
     <config guid="4b3a311a-8929-497c-bcdf-cf2d66b2da42">
-      <active>true</active>
+      <active>false</active>
       <description>AP_SPEED_H</description>
-      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_SPEED_SELECTED)" UUID="b97bdb2d-11cd-45fd-921a-5bcb3c324530" />
+        <test type="Float" value="1" />
         <modifiers>
           <transformation active="True" expression="Truncate($ / 100)" substrStart="0" substrEnd="7" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         </modifiers>
-        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="FCU-SPD 1" pinBrightness="255" pinPwm="True" />
+        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="FCU-SPD 1" pinBrightness="255" />
         <preconditions />
         <configrefs />
       </settings>
     </config>
     <config guid="0d7db2d1-7fe6-4181-9d59-17dcffa05327">
-      <active>true</active>
+      <active>false</active>
       <description>AP_SPEED_T</description>
-      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_SPEED_SELECTED)" UUID="b97bdb2d-11cd-45fd-921a-5bcb3c324530" />
+        <test type="Float" value="1" />
         <modifiers>
           <transformation active="True" expression="Truncate(($ % 100) / 10)" substrStart="0" substrEnd="7" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
@@ -48,10 +51,11 @@
       </settings>
     </config>
     <config guid="380561cd-7af6-4975-834e-8b10597dc973">
-      <active>true</active>
+      <active>false</active>
       <description>AP_SPEED_U</description>
-      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <source type="SimConnect" VarType="CODE" Value="(L:A32NX_AUTOPILOT_SPEED_SELECTED)" UUID="b97bdb2d-11cd-45fd-921a-5bcb3c324530" />
+        <test type="Float" value="1" />
         <modifiers>
           <transformation active="True" expression="$ % 10" substrStart="0" substrEnd="7" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
@@ -62,10 +66,11 @@
       </settings>
     </config>
     <config guid="d056927e-8a45-454f-98bf-b7b2f004bb79">
-      <active>true</active>
+      <active>false</active>
       <description>MCDU - BACKLIGHT</description>
-      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <source type="SimConnect" VarType="CODE" Value="(A:LIGHT POTENTIOMETER:85, Percent)" UUID="e6ad0436-c249-443a-bb47-d24a13342b9d" />
+        <test type="Float" value="1" />
         <modifiers>
           <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
@@ -76,10 +81,11 @@
       </settings>
     </config>
     <config guid="fa363955-4536-4218-bfde-d13a02591005">
-      <active>true</active>
+      <active>false</active>
       <description>FCU - BACKLIGHT</description>
-      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <source type="SimConnect" VarType="CODE" Value="(A:LIGHT POTENTIOMETER:85, Percent)" UUID="e6ad0436-c249-443a-bb47-d24a13342b9d" />
+        <test type="Float" value="1" />
         <modifiers>
           <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
@@ -89,12 +95,46 @@
         <configrefs />
       </settings>
     </config>
+    <config guid="274caac9-e86c-4ecb-9284-77c1be0a23a8">
+      <active>true</active>
+      <description>OVH ELEC EXTP AV</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:EXTERNAL POWER AVAILABLE:1, Bool) (A:EXTERNAL POWER ON:1, Bool) ! and (L:A32NX_OVHD_INTLT_ANN) 0 == or 1 and 1 and (L:A32NX_OVHD_INTLT_ANN, number) 2 == if{ 0.1 } els{ 1 } * (A:CIRCUIT GENERAL PANEL ON, Bool) *" UUID="1cb53187-0a3a-4fcc-81a4-7b933a62aab2" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+          <interpolation active="False">
+            <value x="0" y="1" />
+            <value x="1" y="0" />
+          </interpolation>
+        </modifiers>
+        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="OVH-ELEC_AV" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="1241995e-ba99-40c1-8393-1a0b027e14bf">
+      <active>true</active>
+      <description>OVH ELEC EXTP ON</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:EXTERNAL POWER AVAILABLE:1, Bool) (A:EXTERNAL POWER ON:1, Bool) and (L:A32NX_OVHD_INTLT_ANN) 0 == or (L:A32NX_ELEC_DC_BAT_BUS_IS_POWERED, Bool) and 1 and (L:A32NX_OVHD_INTLT_ANN, number) 2 == if{ 0.1 } els{ 1 } * (A:CIRCUIT GENERAL PANEL ON, Bool) *" UUID="f85ffab7-0a49-427e-8227-a3a3cdad9a89" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+          <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        </modifiers>
+        <display type="Output" serial="MCDU/ SN-E660B4404B457635" trigger="normal" pin="OVH-ELEC_ON" pinBrightness="255" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
   </outputs>
   <inputs>
     <config guid="a88edf32-93e9-410d-95be-636173c01d8a">
-      <active>true</active>
+      <active>false</active>
       <description>MCDU - L1</description>
-      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L1" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L1" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <button>
           <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L1)" presetId="3a96afc2-5adf-4f31-beb5-60b37bf1b971" />
           <onRelease />
@@ -104,9 +144,9 @@
       </settings>
     </config>
     <config guid="a88edf32-93e9-410d-95be-636173c01d8b">
-      <active>true</active>
+      <active>false</active>
       <description>MCDU - L2</description>
-      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L2" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L2" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <button>
           <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L2)" presetId="cd3c6182-69c4-47cf-bc5f-2815fce1ced0" />
           <onRelease />
@@ -116,9 +156,9 @@
       </settings>
     </config>
     <config guid="a88edf32-93e9-410d-95be-636173c01d8c">
-      <active>true</active>
+      <active>false</active>
       <description>MCDU - L3</description>
-      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L3" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L3" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <button>
           <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L3)" presetId="3e176fa1-f47a-4287-8434-375aaefa444b" />
           <onRelease />
@@ -128,9 +168,9 @@
       </settings>
     </config>
     <config guid="a88edf32-93e9-410d-95be-636173c01d8d">
-      <active>true</active>
+      <active>false</active>
       <description>MCDU - L4</description>
-      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L4" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L4" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <button>
           <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L4)" presetId="76733f5d-77ba-41c1-b637-de5031673195" />
           <onRelease />
@@ -140,9 +180,9 @@
       </settings>
     </config>
     <config guid="a88edf32-93e9-410d-95be-636173c01d8e">
-      <active>true</active>
+      <active>false</active>
       <description>MCDU - L5</description>
-      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L5" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L5" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <button>
           <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L5)" presetId="afcf9e88-b54a-4164-88a1-dbf11ce3ae34" />
           <onRelease />
@@ -152,9 +192,9 @@
       </settings>
     </config>
     <config guid="a88edf32-93e9-410d-95be-636173c01d8f">
-      <active>true</active>
+      <active>false</active>
       <description>MCDU - L6</description>
-      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L6" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="MCDU-L6" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <button>
           <onPress type="MSFS2020CustomInputAction" command="(&gt;H:A320_Neo_CDU_1_BTN_L6)" presetId="2307811d-ddc8-4692-9935-f3a6619d9045" />
           <onRelease />
@@ -163,10 +203,14 @@
         <configrefs />
       </settings>
     </config>
-    <config guid="01c4e280-f5ea-4874-914f-8c80978e8705">
+    <config guid="e5f9919a-aa61-4abc-a837-ce8d59a74662">
       <active>true</active>
-      <description>CAPT EFIS - ADF/VOR 1</description>
-      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null" serial="" name="" type="-" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <description>OVH ELEC EXTP</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.7.4.1, Culture=neutral, PublicKeyToken=null" serial="MCDU/ SN-E660B4404B457635" name="231" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="(A:EXTERNAL POWER AVAILABLE:1,bool) (A:EXTERNAL POWER ON:1,bool) ! and &#xA;if{ 1 (&gt;K:TOGGLE_EXTERNAL_POWER) } els{ &#xA;(A:EXTERNAL POWER ON:1,bool) if{ 1 (&gt;K:TOGGLE_EXTERNAL_POWER) } }" presetId="0d34aedb-539c-49a7-a4cc-de3182e36bf0" />
+          <onRelease />
+        </button>
         <preconditions />
         <configrefs />
       </settings>
